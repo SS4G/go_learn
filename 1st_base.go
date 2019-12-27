@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"draw"
 )
 
 func stringTest(str0 string) {
@@ -9,11 +10,11 @@ func stringTest(str0 string) {
 	fmt.Printf("length of %s is %d", str0, len(str0))
 }
 
-func main2() {
+func main1st() {
 	fmt.Println("hello world!")
-	//var a = 1
-	//var b = "a"
+	var a = 1
+	var b = "a"
 	stringTest(`你哈`)
-	//fmt.Println(a, b)
-	//draw.DrawApple("red", 123)
+	fmt.Println(a, b)
+	draw.DrawApple("red", 123)
 }
