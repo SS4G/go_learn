@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main3rd() {
+	fmt.Println("this is 3rd main function")
 	//数组创建
 	//数组内部的读写
 	//数组的迭代

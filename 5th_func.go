@@ -1,6 +1,9 @@
 package main
+import "fmt"
 
 func main5th() {
+	fmt.Println("this is 5th main function")
+
 	//函数创建
 	//函数参数传入
 	//函数返回值 

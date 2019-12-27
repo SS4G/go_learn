@@ -1,5 +1,10 @@
 package main
 
+//import (
+//	"go_learn1/main"
+//)
+
 func main() {
-    main1st()
+	//Main1st()
+	main2nd()
 }
