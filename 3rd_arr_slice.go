@@ -3,11 +3,13 @@ package main
 import (
 	"fmt"
 	"sort"
+	"strings"
 	//"reflect"
 )
 
 
 type intSlice []int
+//定义一个intSlice 类型 然后定义关联的方法(接口) 包括 Len Less Swap 三个方法 这样才可以后续被调用
 func (p intSlice) Len() int           { return len(p) }
 func (p intSlice) Less(i, j int) bool { return p[i] < p[j] }
 func (p intSlice) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
@@ -65,15 +67,28 @@ func main3rd() {
 	fmt.Println("slice1", slice1) //slice 1 和 3的数值是一样的 说明 slice1 和slice3是一个对象 
 	//7 数组的排序 key 函数
 	fmt.Println("7--------------------------------------") //带有默认换行符
-	slice4 := make(intSlice, 0)
-	slice4ext = append(slice4, 3, 2, 1, 4, 21,6, 13)
-    sort.Sort(slice4)
+	slice4ext := make(intSlice, 0)
+	slice4ext = append(slice4ext, 3, 2, 1, 4, 21,6, 13)
+	sort.Sort(slice4ext)
+	fmt.Println("sorted slice", slice4ext)
 	//8 数组字符串互转
+	var stringArr = []string{"aa", "bb", "cc"}
+	joinedString := strings.Join(stringArr, "#")
+	fmt.Println("joined string", joinedString)
 	//9 数组的比较
-	
-	//slice 创建
-	//slice 添加元素
-	//slice 删除元素
-	//slice 和数组的区别
-	//slice 其余操作 排序 拷贝 翻转 是否可以当做数组来用
+	var arrA = [3]string{"aa", "bb", "ccc"}
+	var arrB = [3]string{"aa", "bb", "ccc"}
+	var arrC = [5]string{"aa", "bb", "ccc", "dd", "eee"}
+	if arrA == arrB {
+		fmt.Println(arrA, "==", arrB)
+	} else {
+		fmt.Println(arrA, "!=", arrB)
+	}
+	fmt.Println("arr C", arrC)
+	//if arrC == arrB { //different can't be 
+	//	fmt.Println(arrC, "==", arrB)
+	//} else {
+	//	fmt.Println(arrC, "!=", arrB)
+	//}
+    
 }
