@@ -21,6 +21,14 @@ func createInner() []string {
     return resultString//这里像元祖一样返回既可以
 }
 
+func add(a, b int) int {return a + b}
+func mul(a, b int) int {return a * b}
+func sub(a, b int) int {return a - b}
+
+func calc(calcFunc func(int, int) (int), a, b int) (int) {
+    return calcFunc(a, b)
+}
+
 func main5th() {
 	fmt.Println("this is 5th main function")
 
@@ -39,4 +47,14 @@ func main5th() {
 	fmt.Println(innerObject)
 	innerObject[2] = "babs"
 	fmt.Println(innerObject)
+
+	//验证函数被当做对象传递的例子
+	a := 10
+	b := 20
+	div := func(a, b int) (int) { return a / b}
+	fmt.Println("add a=%d b=%d result=%d\n", a, b, calc(add, a, b))
+	fmt.Println("mul a=%d b=%d result=%d\n", a, b, calc(mul, a, b))
+	fmt.Println("sub a=%d b=%d result=%d\n", a, b, calc(sub, a, b))
+	fmt.Println("div a=%d b=%d result=%d\n", a, b, calc(div, a, b))
+
 }
